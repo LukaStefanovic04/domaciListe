@@ -9,9 +9,6 @@ public class Student {
         this.ocena = ocena;
     }
 
-    public int getOcena() {
-        return ocena;
-    }
 
     @Override
     public String toString() {
