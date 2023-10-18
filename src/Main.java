@@ -1,17 +1,43 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
+        List<Student> sviStudenti = new ArrayList<>();
+        List<Student> uspesniStudenti = new ArrayList<>();
+        while (true) {
+            System.out.println("Unesite ime studenta:  ");
+            String ime = scanner.next();
+            if (ime.equals("quit")) {
+                break;
+            }
+            System.out.println("Unesite prezime studenta:");
+            String prezime = scanner.next();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+            System.out.println("Unesite ocenu studenta:  ");
+            int ocena = scanner.nextInt();
+            if (ocena == 5 || ocena == 6 || ocena == 7 || ocena == 9) {
+                Student student = new Student(ime, prezime, ocena);
+                sviStudenti.add(student);
+                if (ocena > 5) {
+                    uspesniStudenti.add(student);
+                }
+            } else {
+                System.out.println("Uneli ste neispravnu ocenu.");
+            }
         }
+
+        System.out.println("Svi studenti:");
+        for (Student student : sviStudenti) {
+            System.out.println(student);
+        }
+
+        System.out.println("Studenti koji su polozili: ");
+        for (Student student : uspesniStudenti) {
+            System.out.println(student);
+        }
+
     }
 }
