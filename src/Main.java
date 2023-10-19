@@ -8,14 +8,13 @@ public class Main {
         List<Student> sviStudenti = new ArrayList<>();
         List<Student> uspesniStudenti = new ArrayList<>();
         while (true) {
-            System.out.println("Unesite ime studenta:  ");
+            System.out.println("Unesite ime studenta: ");
             String ime = scanner.next();
             if (ime.equals("quit")) {
                 break;
             }
             System.out.println("Unesite prezime studenta:");
             String prezime = scanner.next();
-
             System.out.println("Unesite ocenu studenta:  ");
             int ocena = scanner.nextInt();
             if (ocena == 5 || ocena == 6 || ocena == 7 || ocena == 9) {
